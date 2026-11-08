@@ -18,10 +18,8 @@ mniejszy = []
 
 for key, value in translation.items():
     if s > int(key):
-        print("wiekszy od: ", key)
         wiekszy.append(key)
     else:
-        print("mniejszy od: ", key)
         mniejszy.append(key)
 
 print("pomiedzy: ", wiekszy[-1], mniejszy[0])
@@ -31,12 +29,17 @@ nwm = s - int(wiekszy[-1])
 print(nwm)
 
 roznica = list(map(int, str(nwm)))
+lista_s = list(map(int, str(s)))
 
 print(roznica)
-
+pozostalo = []
 for key, value in translation.items():
     if key == wiekszy[-1]:
-        str(wynik + value * roznica[0])
-        break
+        wynik = value * lista_s[0]
+        for i in lista_s:
+            if i != lista_s[0]:
+                pozostalo.append(i)
+                
 
 print(wynik)
+print(pozostalo)
